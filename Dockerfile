@@ -36,6 +36,11 @@ ENV GRADIO_SERVER_NAME=0.0.0.0
 RUN chmod 777 /usr
 RUN chmod 777 /app
 
+RUN wget https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz -O /usr/local/lib/python3.10/site-packages/pyopenjtalk/dic.tar.gz
+RUN chmod 777 /usr/local/lib/python3.10/site-packages/pyopenjtalk/dic.tar.gz
+RUN chmod 777 /usr/local/lib/python3.10/site-packages/pyopenjtalk
+
+
 RUN mkdir /nltk_data && \
     chmod 777 /nltk_data && \
     mkdir /temp && \
