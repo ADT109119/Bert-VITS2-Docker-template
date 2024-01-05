@@ -1,0 +1,10 @@
+{
+    "clap-htsat-fused": {
+        "repo_id": "laion/clap-htsat-fused",
+        "files": ["pytorch_model.bin"]
+    },
+    "wav2vec2-large-robust-12-ft-emotion-msp-dim": {
+        "repo_id": "audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim",
+        "files": ["pytorch_model.bin"]
+    }
+}
