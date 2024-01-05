@@ -374,6 +374,12 @@ def gr_util(item):
             "__type__": "update",
         }
 
+import json
+
+def load_json(file_path):
+    with open(file_path, 'r', encoding="utf-8") as file:
+        data = json.load(file)
+    return data
 
 if __name__ == "__main__":
     if config.webui_config.debug:
@@ -388,12 +394,15 @@ if __name__ == "__main__":
     speaker_ids = hps.data.spk2id
     speakers = list(speaker_ids.keys())
     languages = ["ZH", "JP", "EN", "auto", "mix"]
+
+    author_and_voice_data = load_json('author_and_voice_data.json')
+
     with gr.Blocks() as app:
         with gr.Row():
             with gr.Column():
-                gr.Markdown(value="""
-                作者：ADT109119\n
-                聲音歸屬：國立臺中教育大學 數位內容科技學系 113級畢籌會\n
+                gr.Markdown(value=f"""
+                作者：{author_and_voice_data["author"]}\n
+                聲音歸屬：{author_and_voice_data["voice"]}\n
                 Bert-VITS2項目：https://github.com/fishaudio/Bert-VITS2\n
                 Bert-VITS2-Colab：https://github.com/ADT109119/Bert-VITS2-Colab\n
                 使用本模型請嚴格遵守法規！ \n
