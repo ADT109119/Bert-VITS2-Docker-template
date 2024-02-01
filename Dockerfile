@@ -38,6 +38,7 @@ RUN mkdir /nltk_data && \
     chmod 777 /temp && \
     mkdir /temp/matplotlib && \
     mkdir /temp/huggingface && \
+    mkdir /temp/huggingface/hub && \
     mkdir /temp/numba
 
 ENV NUMBA_CACHE_DIR=/temp/numba
