@@ -18,7 +18,7 @@ RUN wget https://huggingface.co/microsoft/wavlm-base-plus/resolve/main/pytorch_m
     wget https://huggingface.co/IDEA-CCNL/Erlangshen-MegatronBert-1.3B/resolve/main/pytorch_model.bin?download=true -O bert/Erlangshen-MegatronBert-1.3B-Chinese/pytorch_model.bin && \
     wget https://huggingface.co/ADT109119/G2PWModel-v2-onnx/resolve/main/g2pw.onnx?download=true -O g2pW/g2pW.onnx && \
     wget https://huggingface.co/laion/clap-htsat-fused/resolve/main/pytorch_model.bin?download=true -O emotional/clap-htsat-fused/pytorch_model.bin && \
-    wget https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim/resolve/main/pytorch_model.bin?download=true -O emotional/wav2vec2-large-robust-12-ft-emotion-msp-dim/pytorch_model.bin && \
+    wget https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim/resolve/main/pytorch_model.bin?download=true -O emotional/wav2vec2-large-robust-12-ft-emotion-msp-dim/pytorch_model.bin
 
 RUN cd bert && ls
 
