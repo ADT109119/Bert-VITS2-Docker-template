@@ -11,8 +11,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # Copy files
 COPY . .
 
-RUN cd bert && ls && pwd
-
 # Clone the Bert repository
 RUN wget https://huggingface.co/microsoft/wavlm-base-plus/resolve/main/pytorch_model.bin?download=true -O slm/wavlm-base-plus/pytorch_model.bin && \
     wget https://huggingface.co/ku-nlp/deberta-v2-large-japanese-char-wwm/resolve/main/pytorch_model.bin?download=true -O bert/deberta-v2-large-japanese-char-wwm/pytorch_model.bin && \
@@ -22,13 +20,9 @@ RUN wget https://huggingface.co/microsoft/wavlm-base-plus/resolve/main/pytorch_m
     git clone --depth 1 https://huggingface.co/laion/clap-htsat-fused emotional/clap-htsat-fused && \
     git clone --depth 1 https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim emotional/wav2vec2-large-robust-12-ft-emotion-msp-dim
 
-RUN cd bert && ls
-
-RUN cd bert/deberta-v3-large && ls -lh
 
 # Install Python requirements
 RUN pip install -r requirements.txt
-
 
 # Set Gradio server name
 ENV GRADIO_SERVER_NAME=0.0.0.0
