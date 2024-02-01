@@ -13,6 +13,9 @@ COPY . .
 
 # Clone the Bert repository
 RUN wget https://huggingface.co/microsoft/wavlm-base-plus/resolve/main/pytorch_model.bin?download=true -O slm/wavlm-base-plus/pytorch_model.bin && \
+    wget https://huggingface.co/hfl/chinese-roberta-wwm-ext-large/resolve/main/pytorch_model.bin?download=true -O bert/chinese-roberta-wwm-ext-large/pytorch_model.bin && \
+    wget https://huggingface.co/microsoft/deberta-v3-large/resolve/main/pytorch_model.bin?download=true -O bert/deberta-v3-large/pytorch_model.bin && \
+    wget https://huggingface.co/microsoft/deberta-v3-large/resolve/main/spm.model?download=true -O bert/deberta-v3-large/spm.model && \
     wget https://huggingface.co/IDEA-CCNL/Erlangshen-MegatronBert-1.3B/resolve/main/pytorch_model.bin?download=true -O bert/Erlangshen-MegatronBert-1.3B-Chinese/pytorch_model.bin && \
     wget https://huggingface.co/ADT109119/G2PWModel-v2-onnx/resolve/main/g2pw.onnx?download=true -O g2pW/g2pW.onnx && \
     wget https://huggingface.co/laion/clap-htsat-fused/resolve/main/pytorch_model.bin?download=true -O emotional/clap-htsat-fused/pytorch_model.bin && \
