@@ -16,17 +16,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 import torch
-import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
-import nltk
-nltk.download('cmudict')
 import utils
 from infer import infer, latest_version, get_net_g, infer_multilang
 import gradio as gr
 import webbrowser
 import numpy as np
 from config import config
-from tools.translate import translate
 import librosa
 
 net_g = None
@@ -34,7 +29,6 @@ net_g = None
 device = config.webui_config.device
 if device == "mps":
     os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
-
 
 def generate_audio(
     slices,
